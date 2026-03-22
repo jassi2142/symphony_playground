@@ -1,4 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Platform Detection
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    document.body.classList.add(isMobile ? 'is-mobile' : 'is-desktop');
+    
+    const setOrientation = () => {
+        if(window.innerWidth > window.innerHeight) {
+            document.body.classList.add('landscape');
+            document.body.classList.remove('portrait');
+        } else {
+            document.body.classList.add('portrait');
+            document.body.classList.remove('landscape');
+        }
+    };
+    window.addEventListener('resize', setOrientation);
+    setOrientation();
+
     const pals = document.querySelectorAll('#sidebar .pal');
     const meadow = document.getElementById('meadow');
     const trashMonster = document.getElementById('trash-monster');

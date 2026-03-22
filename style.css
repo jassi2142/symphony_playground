@@ -447,8 +447,8 @@ body.theme-night .theme-toggle {
     z-index: 100;
 }
 
-/* 📱 MOBILE RESPONSIVENESS */
-@media (max-width: 768px) {
+/* 📱 PORTRAIT MOBILE RESPONSIVENESS */
+@media (max-width: 900px) and (orientation: portrait) {
     #app {
         flex-direction: column;
     }
@@ -590,5 +590,63 @@ body.theme-night .theme-toggle {
         right: auto;
         padding: 5px 10px;
         font-size: 10px;
+    }
+}
+
+/* 🌊 LANDSCAPE MOBILE RESPONSIVENESS */
+@media (max-height: 600px) and (orientation: landscape) {
+    #sidebar { width: 110px; overflow-x: hidden; }
+    .sidebar-inner { margin-top: 10px; gap: 15px; padding-bottom: 20px;}
+    .pal { width: 55px; height: 55px; border-width: 3px; }
+    .pal-icon { font-size: 25px; }
+    .pal-icon svg { width: 30px !important; height: 30px !important; }
+
+    #categories { flex-direction: column; padding: 10px 5px; gap: 8px; margin-bottom: 0px;}
+    .category-tab { width: 35px; height: 35px; font-size: 18px; margin: 0 auto; }
+
+    #meadow { margin: 55px 10px 85px 20px; border-radius: 20px; border-width: 5px; }
+
+    #controls-wrapper {
+        bottom: 10px;
+        right: 15px;
+        left: auto;
+        transform: none;
+        flex-direction: row;
+        align-items: flex-end;
+        gap: 15px;
+    }
+
+    #sliders { padding: 5px 15px; gap: 10px; margin-bottom: 0px; border-width: 2px;}
+    #controls { padding: 5px 10px; gap: 10px; border-width: 2px; border-radius: 20px;}
+    
+    input[type=range] { width: 70px; }
+    input[type=range]::-webkit-slider-thumb { height: 20px; width: 20px; margin-top: -5px;}
+    
+    .control-btn { width: 45px; height: 45px; border-width: 3px; }
+    .control-btn svg { width: 20px; height: 20px; }
+    .btn-record span { font-size: 18px !important; }
+
+    #presets {
+        top: 10px;
+        left: 130px;
+        transform: none;
+        padding: 5px 15px;
+    }
+
+    #trash-monster {
+        width: 60px; height: 60px;
+        bottom: 10px;
+        left: 130px;
+        right: auto;
+        border-width: 3px;
+    }
+    .monster-mouth { width: 25px; height: 8px; }
+    
+    .theme-toggle {
+        top: 10px;
+        right: 10px;
+        bottom: auto;
+        padding: 5px 10px;
+        font-size: 11px;
     }
 }
