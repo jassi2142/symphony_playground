@@ -447,206 +447,62 @@ body.theme-night .theme-toggle {
     z-index: 100;
 }
 
-/* 📱 PORTRAIT MOBILE RESPONSIVENESS */
-@media (max-width: 900px) and (orientation: portrait) {
-    #app {
-        flex-direction: column;
-    }
-
-    #sidebar {
-        width: 100%;
-        height: 120px;
-        flex-direction: row;
-        border-right: none;
-        border-bottom: 6px solid #E6C800;
-        overflow-y: hidden;
-        overflow-x: auto;
-    }
-
-    #categories {
-        flex-direction: column;
-        width: auto;
-        padding: 5px;
-        margin-bottom: 0;
-        gap: 8px;
-        position: sticky;
-        left: 0;
-        background-color: #FFDE00;
-        z-index: 20;
-        box-shadow: 5px 0 10px rgba(0,0,0,0.1);
-        justify-content: flex-start;
-    }
-
-    body.theme-night #categories { background-color: #2C3E50; }
-
-    .category-tab {
-        width: 30px;
-        height: 30px;
-        font-size: 18px;
-        border-radius: 12px;
-    }
-    
-    .category-tab.active {
-        border-width: 2px;
-    }
-
-    .sidebar-inner {
-        flex-direction: row;
-        margin-top: 0;
-        padding: 10px 20px 10px 10px;
-        align-items: center;
-        gap: 15px;
-        width: auto;
-    }
-
-    .pal {
-        width: 60px;
-        height: 60px;
-        border-width: 4px;
-        flex-shrink: 0;
-    }
-
-    .pal-icon { font-size: 30px; }
-    .pal-icon svg { width: 35px !important; height: 35px !important; }
-
-    #meadow {
-        margin: 65px 10px 140px 10px;
-        border-width: 6px;
-        border-radius: 20px;
-    }
-
-    #presets {
-        top: 5px;
-        width: 95%;
-        padding: 5px;
-        gap: 5px;
-    }
-
-    .preset-btn {
-        padding: 4px 6px;
-        font-size: 11px;
-    }
-
-    #presets span {
-        font-size: 11px;
-        margin-right: 2px !important;
-    }
-
-    #controls-wrapper {
-        bottom: 5px;
-        width: 100%;
-        gap: 5px;
-    }
-
-    #sliders {
-        padding: 5px 15px;
-        gap: 15px;
-        border-width: 2px;
-        border-radius: 15px;
-    }
-
-    input[type=range] { width: 80px; }
-    input[type=range]::-webkit-slider-thumb {
-        height: 20px; width: 20px; margin-top: -5px; border-width: 2px;
-    }
-    input[type=range]::-webkit-slider-runnable-track { height: 10px; }
-    .slider-icon { font-size: 16px; }
-
-    #controls {
-        padding: 5px 15px;
-        gap: 15px;
-        border-width: 2px;
-        border-radius: 20px;
-    }
-
-    .control-btn {
-        width: 45px;
-        height: 45px;
-        border-width: 3px;
-    }
-
-    .control-btn svg { width: 20px; height: 20px; }
-    .btn-record span { font-size: 18px !important; }
-
-    #trash-monster {
-        width: 70px;
-        height: 70px;
-        bottom: 60px;
-        right: 15px;
-        border-width: 4px;
-        border-radius: 20px;
-    }
-
-    .eye { width: 12px; height: 12px; }
-    .eye::after { width: 5px; height: 5px; bottom: 2px; right: 2px; }
-    .monster-mouth { width: 25px; height: 8px; }
-
-    #trash-monster.drag-over .monster-mouth { height: 20px; }
-
-    .theme-toggle {
-        top: auto;
-        bottom: 120px;
-        left: 10px;
-        right: auto;
-        padding: 5px 10px;
-        font-size: 10px;
-    }
+/* 📱 PORTRAIT MOBILE RESPONSIVENESS (Enforced via JS classes) */
+body.is-mobile.portrait #app {
+    flex-direction: column;
 }
-
-/* 🌊 LANDSCAPE MOBILE RESPONSIVENESS */
-@media (max-height: 600px) and (orientation: landscape) {
-    #sidebar { width: 110px; overflow-x: hidden; }
-    .sidebar-inner { margin-top: 10px; gap: 15px; padding-bottom: 20px;}
-    .pal { width: 55px; height: 55px; border-width: 3px; }
-    .pal-icon { font-size: 25px; }
-    .pal-icon svg { width: 30px !important; height: 30px !important; }
-
-    #categories { flex-direction: column; padding: 10px 5px; gap: 8px; margin-bottom: 0px;}
-    .category-tab { width: 35px; height: 35px; font-size: 18px; margin: 0 auto; }
-
-    #meadow { margin: 55px 10px 85px 20px; border-radius: 20px; border-width: 5px; }
-
-    #controls-wrapper {
-        bottom: 10px;
-        right: 15px;
-        left: auto;
-        transform: none;
-        flex-direction: row;
-        align-items: flex-end;
-        gap: 15px;
-    }
-
-    #sliders { padding: 5px 15px; gap: 10px; margin-bottom: 0px; border-width: 2px;}
-    #controls { padding: 5px 10px; gap: 10px; border-width: 2px; border-radius: 20px;}
-    
-    input[type=range] { width: 70px; }
-    input[type=range]::-webkit-slider-thumb { height: 20px; width: 20px; margin-top: -5px;}
-    
-    .control-btn { width: 45px; height: 45px; border-width: 3px; }
-    .control-btn svg { width: 20px; height: 20px; }
-    .btn-record span { font-size: 18px !important; }
-
-    #presets {
-        top: 10px;
-        left: 130px;
-        transform: none;
-        padding: 5px 15px;
-    }
-
-    #trash-monster {
-        width: 60px; height: 60px;
-        bottom: 10px;
-        left: 130px;
-        right: auto;
-        border-width: 3px;
-    }
-    .monster-mouth { width: 25px; height: 8px; }
-    
-    .theme-toggle {
-        top: 10px;
-        right: 10px;
-        bottom: auto;
-        padding: 5px 10px;
-        font-size: 11px;
-    }
+body.is-mobile.portrait #sidebar {
+    width: 100%; height: 120px; flex-direction: row; border-right: none; border-bottom: 6px solid #E6C800; overflow-y: hidden; overflow-x: auto;
 }
+body.is-mobile.portrait #categories {
+    flex-direction: column; width: auto; padding: 5px; margin-bottom: 0; gap: 8px; position: sticky; left: 0; background-color: #FFDE00; z-index: 20; box-shadow: 5px 0 10px rgba(0,0,0,0.1); justify-content: flex-start;
+}
+body.theme-night.is-mobile.portrait #categories { background-color: #2C3E50; }
+body.is-mobile.portrait .category-tab { width: 30px; height: 30px; font-size: 18px; border-radius: 12px; }
+body.is-mobile.portrait .category-tab.active { border-width: 2px; }
+body.is-mobile.portrait .sidebar-inner { flex-direction: row; margin-top: 0; padding: 10px 20px 10px 10px; align-items: center; gap: 15px; width: auto; }
+body.is-mobile.portrait .pal { width: 60px; height: 60px; border-width: 4px; flex-shrink: 0; }
+body.is-mobile.portrait .pal-icon { font-size: 30px; }
+body.is-mobile.portrait .pal-icon svg { width: 35px !important; height: 35px !important; }
+body.is-mobile.portrait #meadow { margin: 65px 10px 140px 10px; border-width: 6px; border-radius: 20px; }
+body.is-mobile.portrait #presets { top: 5px; width: 95%; padding: 5px; gap: 5px; }
+body.is-mobile.portrait .preset-btn { padding: 4px 6px; font-size: 11px; }
+body.is-mobile.portrait #presets span { font-size: 11px; margin-right: 2px !important; }
+body.is-mobile.portrait #controls-wrapper { bottom: 5px; width: 100%; gap: 5px; }
+body.is-mobile.portrait #sliders { padding: 5px 15px; gap: 15px; border-width: 2px; border-radius: 15px; }
+body.is-mobile.portrait input[type=range] { width: 80px; }
+body.is-mobile.portrait input[type=range]::-webkit-slider-thumb { height: 20px; width: 20px; margin-top: -5px; border-width: 2px; }
+body.is-mobile.portrait input[type=range]::-webkit-slider-runnable-track { height: 10px; }
+body.is-mobile.portrait .slider-icon { font-size: 16px; }
+body.is-mobile.portrait #controls { padding: 5px 15px; gap: 15px; border-width: 2px; border-radius: 20px; }
+body.is-mobile.portrait .control-btn { width: 45px; height: 45px; border-width: 3px; }
+body.is-mobile.portrait .control-btn svg { width: 20px; height: 20px; }
+body.is-mobile.portrait .btn-record span { font-size: 18px !important; }
+body.is-mobile.portrait #trash-monster { width: 70px; height: 70px; bottom: 60px; right: 15px; border-width: 4px; border-radius: 20px; }
+body.is-mobile.portrait .eye { width: 12px; height: 12px; }
+body.is-mobile.portrait .eye::after { width: 5px; height: 5px; bottom: 2px; right: 2px; }
+body.is-mobile.portrait .monster-mouth { width: 25px; height: 8px; }
+body.is-mobile.portrait #trash-monster.drag-over .monster-mouth { height: 20px; }
+body.is-mobile.portrait .theme-toggle { top: auto; bottom: 120px; left: 10px; right: auto; padding: 5px 10px; font-size: 10px; }
+
+/* 🌊 LANDSCAPE MOBILE RESPONSIVENESS (Enforced via JS classes) */
+body.is-mobile.landscape #sidebar { width: 110px; overflow-x: hidden; }
+body.is-mobile.landscape .sidebar-inner { margin-top: 10px; gap: 15px; padding-bottom: 20px;}
+body.is-mobile.landscape .pal { width: 55px; height: 55px; border-width: 3px; }
+body.is-mobile.landscape .pal-icon { font-size: 25px; }
+body.is-mobile.landscape .pal-icon svg { width: 30px !important; height: 30px !important; }
+body.is-mobile.landscape #categories { flex-direction: column; padding: 10px 5px; gap: 8px; margin-bottom: 0px;}
+body.is-mobile.landscape .category-tab { width: 35px; height: 35px; font-size: 18px; margin: 0 auto; }
+body.is-mobile.landscape #meadow { margin: 55px 10px 85px 20px; border-radius: 20px; border-width: 5px; }
+body.is-mobile.landscape #controls-wrapper { bottom: 10px; right: 15px; left: auto; transform: none; flex-direction: row; align-items: flex-end; gap: 15px; }
+body.is-mobile.landscape #sliders { padding: 5px 15px; gap: 10px; margin-bottom: 0px; border-width: 2px;}
+body.is-mobile.landscape #controls { padding: 5px 10px; gap: 10px; border-width: 2px; border-radius: 20px;}
+body.is-mobile.landscape input[type=range] { width: 70px; }
+body.is-mobile.landscape input[type=range]::-webkit-slider-thumb { height: 20px; width: 20px; margin-top: -5px;}
+body.is-mobile.landscape .control-btn { width: 45px; height: 45px; border-width: 3px; }
+body.is-mobile.landscape .control-btn svg { width: 20px; height: 20px; }
+body.is-mobile.landscape .btn-record span { font-size: 18px !important; }
+body.is-mobile.landscape #presets { top: 10px; left: 130px; transform: none; padding: 5px 15px; }
+body.is-mobile.landscape #trash-monster { width: 60px; height: 60px; bottom: 10px; left: 130px; right: auto; border-width: 3px; }
+body.is-mobile.landscape .monster-mouth { width: 25px; height: 8px; }
+body.is-mobile.landscape .theme-toggle { top: 10px; right: 10px; bottom: auto; padding: 5px 10px; font-size: 11px; }
