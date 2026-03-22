@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Symphony Playground</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Sidebar: Sound Pals Tray -->
+        <aside id="sidebar">
+            <div id="categories">
+                <div class="category-tab active" data-category="animal" title="Animals">🐾</div>
+                <div class="category-tab" data-category="instrument" title="Instruments">🎺</div>
+                <div class="category-tab" data-category="nature" title="Nature">🍃</div>
+            </div>
+
+            <div class="sidebar-inner">
+                <!-- ANIMALS -->
+                <div class="pal category-animal" draggable="true" data-type="woodpecker" style="--pal-color: #FF5A5F;">
+                    <div class="pal-icon" style="display: flex; justify-content: center; align-items: center;">
+                        <svg viewBox="-10 0 110 100" width="75" height="75" style="overflow: visible; filter: drop-shadow(0 4px 0 rgba(0,0,0,0.2));">
+                            <rect x="10" y="10" width="25" height="80" fill="#8B5A2B" rx="8" />
+                            <path d="M16 20 v60 M22 15 v70 M28 25 v50" stroke="#5C3A18" stroke-width="2" stroke-linecap="round" />
+                            <ellipse cx="65" cy="55" rx="16" ry="24" fill="#2C3E50" transform="rotate(-15 65 55)" />
+                            <ellipse cx="58" cy="58" rx="8" ry="18" fill="#ECF0F1" transform="rotate(-15 58 58)" />
+                            <polygon points="75,70 90,95 65,85" fill="#1A252F" />
+                            <circle cx="52" cy="30" r="16" fill="#2C3E50" />
+                            <path d="M42 16 Q60 -2 66 22 Z" fill="#E74C3C" />
+                            <circle cx="56" cy="26" r="4.5" fill="#FFFFFF" />
+                            <circle cx="55" cy="26" r="2" fill="#000000" />
+                            <polygon points="35,30 48,27 48,34" fill="#F1C40F" />
+                            <path d="M52 62 L32 68 M55 72 L35 78" stroke="#E67E22" stroke-width="4" stroke-linecap="round" />
+                            <path d="M2 24 L-6 20 M-2 30 L-10 30 M2 36 L-6 40" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="pal category-animal" draggable="true" data-type="elephant" style="--pal-color: #00A699;">
+                    <div class="pal-icon">🐘</div>
+                </div>
+                <div class="pal category-animal" draggable="true" data-type="frog" style="--pal-color: #2ECC71;">
+                    <div class="pal-icon">🐸</div>
+                </div>
+                <div class="pal category-animal" draggable="true" data-type="cat" style="--pal-color: #9B59B6;">
+                    <div class="pal-icon">🐱</div>
+                </div>
+                <div class="pal category-animal" draggable="true" data-type="bee" style="--pal-color: #E67E22;">
+                    <div class="pal-icon">🐝</div>
+                </div>
+                <div class="pal category-animal" draggable="true" data-type="monkey" style="--pal-color: #8B4513;">
+                    <div class="pal-icon">🐒</div>
+                </div>
+                <div class="pal category-animal" draggable="true" data-type="owl" style="--pal-color: #5D4037;">
+                    <div class="pal-icon">🦉</div>
+                </div>
+                <div class="pal category-animal" draggable="true" data-type="duck" style="--pal-color: #F4D03F;">
+                    <div class="pal-icon">🦆</div>
+                </div>
+                <div class="pal category-animal" draggable="true" data-type="cricket" style="--pal-color: #27AE60;">
+                    <div class="pal-icon">🦗</div>
+                </div>
+
+                <!-- INSTRUMENTS -->
+                <div class="pal category-instrument hidden" draggable="true" data-type="trumpet" style="--pal-color: #E74C3C;">
+                    <div class="pal-icon">🎺</div>
+                </div>
+                <div class="pal category-instrument hidden" draggable="true" data-type="guitar" style="--pal-color: #3498DB;">
+                    <div class="pal-icon">🎸</div>
+                </div>
+                <div class="pal category-instrument hidden" draggable="true" data-type="drum" style="--pal-color: #D35400;">
+                    <div class="pal-icon">🥁</div>
+                </div>
+                <!-- 5 NEW INSTRUMENTS -->
+                <div class="pal category-instrument hidden" draggable="true" data-type="bongo" style="--pal-color: #A0522D;">
+                    <div class="pal-icon">🪘</div>
+                </div>
+                <div class="pal category-instrument hidden" draggable="true" data-type="flute" style="--pal-color: #1ABC9C;">
+                    <div class="pal-icon">🪈</div>
+                </div>
+                <div class="pal category-instrument hidden" draggable="true" data-type="accordion" style="--pal-color: #E0C1AA;">
+                    <div class="pal-icon">🪗</div>
+                </div>
+                <div class="pal category-instrument hidden" draggable="true" data-type="maracas" style="--pal-color: #F39C12;">
+                    <div class="pal-icon">🪇</div>
+                </div>
+                <div class="pal category-instrument hidden" draggable="true" data-type="bass" style="--pal-color: #5D6D7E;">
+                    <div class="pal-icon">🎻</div>
+                </div>
+
+                <!-- NATURE -->
+                <div class="pal category-nature hidden" draggable="true" data-type="whistle" style="--pal-color: #F1948A;">
+                    <div class="pal-icon">😗</div>
+                </div>
+                <div class="pal category-nature hidden" draggable="true" data-type="cloud" style="--pal-color: #FC642D;">
+                    <div class="pal-icon">🌈</div>
+                </div>
+                <div class="pal category-nature hidden" draggable="true" data-type="star" style="--pal-color: #F1C40F;">
+                    <div class="pal-icon" style="filter: drop-shadow(0 4px 0 rgba(0,0,0,0.2)); text-shadow: 0 0 10px white;">⭐</div>
+                </div>
+                <div class="pal category-nature hidden" draggable="true" data-type="rain" style="--pal-color: #2980B9;">
+                    <div class="pal-icon">🌧️</div>
+                </div>
+                <div class="pal category-nature hidden" draggable="true" data-type="wind" style="--pal-color: #BDC3C7;">
+                    <div class="pal-icon">🌬️</div>
+                </div>
+                <div class="pal category-nature hidden" draggable="true" data-type="thunder" style="--pal-color: #34495E;">
+                    <div class="pal-icon">⛈️</div>
+                </div>
+                <div class="pal category-nature hidden" draggable="true" data-type="campfire" style="--pal-color: #E74C3C;">
+                    <div class="pal-icon">🏕️</div>
+                </div>
+                <div class="pal category-nature hidden" draggable="true" data-type="ocean" style="--pal-color: #2980B9;">
+                    <div class="pal-icon">🌊</div>
+                </div>
+                <div class="pal category-nature hidden" draggable="true" data-type="songbird" style="--pal-color: #FF69B4;">
+                    <div class="pal-icon">🐦</div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Setup -->
+        <main id="main-area">
+            <!-- Theme Toggle -->
+            <button id="theme-toggle" class="theme-toggle">🌙 Night Mode</button>
+            
+            <!-- Presets -->
+            <div id="presets">
+                <span style="font-weight: bold; color: #555; margin-right: 10px;">Try a Symphony:</span>
+                <button class="preset-btn" data-preset="jungle" style="background:#2ECC71; color:white; box-shadow:0 4px 0 #27AE60;">🌴 Jungle</button>
+                <button class="preset-btn" data-preset="night" style="background:#34495E; color:white; box-shadow:0 4px 0 #2C3E50;">🌌 Night</button>
+                <button class="preset-btn" data-preset="rock" style="background:#E74C3C; color:white; box-shadow:0 4px 0 #C0392B;">🎸 Rock</button>
+            </div>
+
+            <!-- Central Stage: Sound Meadow -->
+            <div id="meadow"></div>
+
+            <!-- Controls Panel -->
+            <div id="controls-wrapper">
+                <div id="sliders">
+                    <div class="slider-group">
+                        <span class="slider-icon">🐢</span>
+                        <input type="range" id="tempo-slider" min="60" max="240" value="120" title="Tempo">
+                        <span class="slider-icon">🐇</span>
+                    </div>
+                    <div class="slider-group">
+                        <span class="slider-icon">🎵</span>
+                        <input type="range" id="pace-slider" min="0.2" max="2.0" step="0.1" value="1.0" title="Note Pace / Legato">
+                        <span class="slider-icon">🎶</span>
+                    </div>
+                </div>
+                <div id="controls">
+                    <button id="btn-play" class="control-btn btn-play" title="Play">
+                        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </button>
+                    <button id="btn-stop" class="control-btn btn-stop" title="Stop">
+                        <svg viewBox="0 0 24 24"><path d="M6 6h12v12H6z"/></svg>
+                    </button>
+                    <!-- NEW: Record Button -->
+                    <button id="btn-record" class="control-btn btn-record" title="Record 15 Seconds">
+                        <span style="font-size:32px; filter:drop-shadow(0 2px 0 rgba(0,0,0,0.2));">⏺️</span>
+                    </button>
+                    <button id="btn-reset" class="control-btn btn-reset" title="Clear Meadow">
+                        <svg viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Trash Monster -->
+            <div id="trash-monster">
+                <div class="monster-body">
+                    <div class="monster-eyes">
+                        <div class="eye"></div>
+                        <div class="eye"></div>
+                    </div>
+                    <div class="monster-mouth"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="audio.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
